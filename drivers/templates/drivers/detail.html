@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{driver}}</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <section>
+            <h1>{{driver}}</h1>
+            
+            {% if driver.car_set.all %}
+                <p>Owned cars:</p>
+                <ul>
+                    {% for car in driver.car_set.all %}
+                        <li><a href="{% url 'cars:detail' car.id%}">{{car}}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No cars owned yet.</p>
+            {% endif %}
+        </section>
+    </main>
+    <footer></footer>
+</body>
+</html>
