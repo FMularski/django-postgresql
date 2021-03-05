@@ -9,3 +9,7 @@ class CarsIndexView(generic.ListView):
     def get_queryset(self):
         return Car.objects.all()
 
+
+class CarsDetailView(generic.DetailView):
+    model = Car
+    template_name = 'cars/detail.html'

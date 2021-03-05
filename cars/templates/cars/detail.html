@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drivers</title>
+    <title>{{car}}</title>
 </head>
 <body>
     <header></header>
     <main>
-        {% if cars %}
-            {% for car in cars %}
-                <h3><a href="{% url 'cars:detail' car.id %}"> {{car}} </a></h3>
-            {% endfor %}
-        {% else %}
-            <h2>No cars yet.</h2>
-        {% endif %}
+        <section>
+            <h1>{{car}}</h1>
+            <ul>
+                <li>Year: {{car.year}}</li>
+                <li>VIN: {{car.vin}}</li>
+                <li>Owner: {{car.owner}}</li>
+            </ul>
+        </section>
     </main>
     <footer></footer>
 </body>
