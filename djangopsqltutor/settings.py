@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cars.apps.CarsConfig',
+    'drivers.apps.DriversConfig'
 ]
 
 MIDDLEWARE = [
@@ -77,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'django_psql_tutor_db',
-        'USER': 'user',
-        'PASSOWRD: '12345'
+        'USER': 'user1',
+        'PASSWORD': '12345'
     }
 }
 

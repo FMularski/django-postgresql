@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drivers</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        {% if cars %}
+            {% for car in cars %}
+                <section>
+                    <h1>{{car.brand}} {{car.model}}</h1>
+                    <ul>
+                        <li>Year: {{car.year}}</li>
+                        <li>VIN: {{car.vin}}</li>
+                        <li>Owner: {{car.owner}}</li>
+                    </ul>
+                </section>
+            {% endfor %}
+        {% else %}
+            <h2>No cars yet.</h2>
+        {% endif %}
+    </main>
+    <footer></footer>
+</body>
+</html>
