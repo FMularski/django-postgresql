@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import  generic
 from .models import Driver
 from .forms import DriverForm
 from django.http import HttpResponse
+from django.urls import reverse
 
 class DriversIndexView(generic.ListView):
     template_name = 'drivers/index.html'
@@ -23,6 +24,7 @@ def create(request):
     else:
         form = DriverForm(request.POST)
         if form.is_valid():
-            return HttpResponse('success')
+            Driver.objects.create(name=form.cleaned_data['name'], license=form.cleaned_data['license'])
+            return redirect(reverse('drivers:index'))
             
     return render(request, 'drivers/create.html', {'form': form})
