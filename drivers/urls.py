@@ -5,5 +5,6 @@ app_name = 'drivers'
 
 urlpatterns = [
     path('', views.DriversIndexView.as_view(), name='index'),
-    path('<int:pk>/', views.DriversDetailView.as_view(), name='detail')
+    path('<int:pk>/', views.DriversDetailView.as_view(), name='detail'),
+    path('create/', views.create, name='create')
 ]
